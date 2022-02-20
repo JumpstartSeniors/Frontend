@@ -79,6 +79,9 @@ function Navbar(props) {
                 <Link to="/Courses">
                     <Text>Courses</Text>
                 </Link>
+                <Link to="/Forms">
+                    <Text>Forms</Text>
+                </Link>
             </Stack>
         </Flex>
     )

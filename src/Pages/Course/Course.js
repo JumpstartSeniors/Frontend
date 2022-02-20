@@ -48,10 +48,10 @@ class CourseNotes extends React.Component {
                                         </Text>
 
                                         <Text mt={2} color='gray.500'>
-                                            Author: {note.author}
-                                        </Text>
-                                        <Text mt={2} color='gray.500'>
                                             Date Posted: {note.datePosted}
+                                        </Text>
+                                        <Text mt={2} color='gray.1000'>
+                                            {note.description}
                                         </Text>
                                     </Box>
                                 </Box>

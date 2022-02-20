@@ -9,7 +9,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-
+import React from 'react';
 
 interface StatsCardProps {
   title: string;
@@ -47,7 +47,21 @@ function StatsCard(props: StatsCardProps) {
 }
 
 export default function Stats() {
+  // maka a request to 8080
+  const url = 'http://localhost:8080/stats';
+  const [stats, setStats] = React.useState({});
+  React.useEffect(() => {
+    fetch(url)
+      .then(res => res.json())
+      .then(data => {
+        setStats(data);
+        console.log(data);
+      })
+  }, []);
+
   return (
+    // pass in data
+    
     <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
       <chakra.h1
         textAlign={'center'}
@@ -56,18 +70,14 @@ export default function Stats() {
         fontWeight={'bold'}>
         Jumpstart Seniors currently holds data for over:
       </chakra.h1>
-      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 5, lg: 8 }}>
         <StatsCard
           title={'Courses'}
-          stat={'20'}
+          stat={stats.courses}
         />
         <StatsCard
           title={'Total Notes'}
-          stat={'1,000'}
-        />
-        <StatsCard
-          title={'Sources'}
-          stat={'50'}
+          stat={stats.notes}
         />
       </SimpleGrid>
     </Box>

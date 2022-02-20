@@ -29,8 +29,8 @@ class AllCourses extends React.Component {
                                         <Box flexShrink={0}>
                                             <Image
                                                 borderRadius='lg'
-                                                width={{ md: 60 }}
-                                                src={course.courseImg}
+                                                width={{ md: 69 }}
+                                                src={course.courseImage}
                                                 alt=''
                                             />
                                         </Box>
@@ -47,7 +47,7 @@ class AllCourses extends React.Component {
                                             </Text>
 
                                             <Text mt={2} color='gray.500'>
-                                                {course.courseDesc}
+                                                {course.courseDescription}
                                             </Text>
                                         </Box>
                                 </Box>
