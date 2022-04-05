@@ -34,14 +34,13 @@ return (
         title: '',
         description: '',
         source: '',
-        author: '',
         datePosted: ''
       }}
       onSubmit={async (values) => {
         await new Promise((r) => setTimeout(r, 500));
         alert(JSON.stringify(values, null, 2));
         // make post request to backend
-        axios.post('http://localhost:8080/courses/' + values.courseCode, values)
+        axios.post('https://jumpstartbackendd.herokuapp.com/notes', values)
       }}
     >
       <Form style={{"height": 1000, "margin": 10}}>

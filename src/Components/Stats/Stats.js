@@ -48,7 +48,7 @@ function StatsCard(props: StatsCardProps) {
 
 export default function Stats() {
   // maka a request to 8080
-  const url = 'http://localhost:8080/stats';
+  const url = 'https://jumpstartbackendd.herokuapp.com/stats';
   const [stats, setStats] = React.useState({});
   React.useEffect(() => {
     fetch(url)
@@ -73,11 +73,11 @@ export default function Stats() {
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 5, lg: 8 }}>
         <StatsCard
           title={'Courses'}
-          stat={stats.courses}
+          stat={stats.courseLength}
         />
         <StatsCard
           title={'Total Notes'}
-          stat={stats.notes}
+          stat={stats.noteLength}
         />
       </SimpleGrid>
     </Box>

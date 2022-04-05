@@ -7,7 +7,7 @@ class AllCourses extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8080/courses')
+        fetch('https://jumpstartbackendd.herokuapp.com/courses')
             .then(res => res.json())
             .then(data => {
                 this.courseData.data = data;

@@ -16,7 +16,7 @@ class CourseNotes extends React.Component {
 
 
     componentDidMount() {
-        const url = 'http://localhost:8080/courses/' + getCurrentUrl();
+        const url = 'https://jumpstartbackendd.herokuapp.com/notes/' + getCurrentUrl();
         fetch(url)
             .then(res => res.json())
             .then(data => {
