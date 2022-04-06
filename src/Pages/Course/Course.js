@@ -16,7 +16,8 @@ class CourseNotes extends React.Component {
   };
 
   componentDidMount() {
-    const url = "https://jumpstartbackendd.herokuapp.com/notes/" + getCurrentUrl();
+    const url =
+      "https://jumpstartbackendd.herokuapp.com/notes/" + getCurrentUrl();
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -41,8 +42,8 @@ class CourseNotes extends React.Component {
                 p={4}
                 display={{ md: "flex" }}
               >
-                  <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
-                <Link href={note.source}>
+                <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
+                  <Link href={note.source}>
                     <Text
                       mt={1}
                       display="block"
@@ -59,36 +60,40 @@ class CourseNotes extends React.Component {
                     <Text mt={2} color="gray.1000">
                       {note.description}
                     </Text>
-                        </Link>
-                    <Text mt={2} color="gray.500">
-                        Likes: {note.likes}
-                        <Button
-                            variantColor="blue"
-                            variant="outline"
-                            ml={2}
-                            size="sm"
-                            icon={<ChevronUpIcon />}
-                            onClick={() => {
-                                const url = "https://jumpstartbackendd.herokuapp.com/notes/like/" + note._id;
-                                // make a post request to url
-                                fetch(url, {
-                                    method: "POST",
-                                    headers: {
-                                        "Content-Type": "application/json",
-                                    },
-                                })
-                                    .then((res) => res.json())
-                                    .then((data) => {
-                                        console.log(data);
-                                        this.forceUpdate();
-                                    });
-                                window.location.reload();
-                            }}
-                        >
-                            Upvote
-                        </Button>
-                    </Text>
-                  </Box>
+                  </Link>
+                  <Text mt={2} color="gray.500">
+                    Likes: {note.likes}
+                    <Button
+                      type="button"
+                      variantColor="blue"
+                      variant="outline"
+                      ml={2}
+                      size="sm"
+                      icon={<ChevronUpIcon />}
+                      // make sure this onclick doesnt go more then twice
+                      onClick={() => {
+                        const url =
+                          "https://jumpstartbackendd.herokuapp.com/notes/like/" +
+                          note._id;
+
+                        fetch(url, {
+                          method: "POST",
+                          headers: {
+                            "Content-Type": "application/json",
+                          },
+                        })
+                          .then((res) => res.json())
+                          .then((data) => {
+                            console.log(data);
+                            this.forceUpdate();
+                          });
+                
+                      }}
+                    >
+                      Upvote
+                    </Button>
+                  </Text>
+                </Box>
               </Box>
             );
           })}
