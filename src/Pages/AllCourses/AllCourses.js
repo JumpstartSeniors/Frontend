@@ -14,6 +14,7 @@ class AllCourses extends React.Component {
                 console.log(data);
                 this.forceUpdate();
             })
+        localStorage.setItem('appState', JSON.stringify(this.state));
     }
 
     render() {

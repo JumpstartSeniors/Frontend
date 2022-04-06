@@ -1,6 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { ChakraProvider, Grid, Box, Image, Link, Text } from "@chakra-ui/react";
+import {
+  ChakraProvider,
+  Grid,
+  Box,
+  Image,
+  Link,
+  Text,
+  Input,
+} from "@chakra-ui/react";
 import { Button, ButtonGroup } from "@chakra-ui/react";
 import { ChevronUpIcon, ChevronDownIcon } from "@chakra-ui/icons";
 // create a function that gets the current url
@@ -26,11 +34,29 @@ class CourseNotes extends React.Component {
         console.log(data);
         this.forceUpdate();
       });
+    localStorage.setItem("appState", JSON.stringify(this.state));
   }
 
   render() {
     return (
       <ChakraProvider>
+        {/* <Text 
+        mt={2}
+        ml={2} 
+        display="block"
+        fontSize="lg"
+        lineHeight="normal"
+        fontWeight="semibold"
+        >
+            Search Notes:
+        </Text>
+        <Input 
+        m={2} 
+        placeholder="Study Sheet...." 
+        onSubmit={() => {
+            console.log("CHECK")
+        }}
+        /> */}
         <div mt={15}>
           {this.courseNotes.data.map((note) => {
             return (
@@ -87,7 +113,6 @@ class CourseNotes extends React.Component {
                             console.log(data);
                             this.forceUpdate();
                           });
-                
                       }}
                     >
                       Upvote
