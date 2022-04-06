@@ -26,7 +26,7 @@ export default function Hero() {
         direction={{ base: 'column', md: 'row' }}>
         <Stack flex={1} spacing={{ base: 5, md: 10 }}>
           <Heading
-            lineHeight={1.1}
+            lineHeight={0.8}
             fontWeight={600}
             fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}>
             <Text
@@ -42,18 +42,17 @@ export default function Hero() {
                 bg: 'gray.400',
                 zIndex: -1,
               }}>
-              Lorem ipsum
+              Jumpstart Seniors
             </Text>
             <br />
-            <Text as={'span'} color={'gray.400'}>
-              Bordem Bitsum!
+            <Text style={{fontSize:"29px"}} as={'span'} color={'gray.400'}>
+              The all-in-one resource for Ontario high school students!
             </Text>
           </Heading>
-          <Text color={'gray.500'}>
-            Jumpstart Senior is a sit amet, consectetur adipiscing elit.
-            Pellentesque euismod, ipsum eu consectetur consectetur, nisi
-            lectus aliquet nunc, eget consectetur nisl nunc eget nisl.
-
+          <Text  color={'gray.500'}>
+            Jumpstart Seniors is a high school student owned non-profit organization that provides
+            Ontario high school students the opportunity to share notes and use other people's notes for a variety of
+            Grade 12 U/M courses!
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
