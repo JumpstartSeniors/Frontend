@@ -38,9 +38,11 @@ return (
       }}
       onSubmit={async (values) => {
         await new Promise((r) => setTimeout(r, 500));
-        alert(JSON.stringify(values, null, 2));
+        alert("Submitted");
         // make post request to backend
         axios.post('https://jumpstartbackendd.herokuapp.com/notes', values)
+        // go back to home
+        window.location.href = "/";
       }}
     >
       <Form style={{"height": 1000, "margin": 10}}>
