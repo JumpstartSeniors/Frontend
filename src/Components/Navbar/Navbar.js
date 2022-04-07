@@ -33,6 +33,7 @@ function Navbar(props) {
             color="black"
             {...props}
         >
+            <Link to='/Home'>
             <Flex align="center" mr={5} mb={2}>
                 <svg
                     style={{ marginRight: 5 }}
@@ -60,6 +61,7 @@ function Navbar(props) {
                     Jumpstart Seniors
                 </Heading>
             </Flex>
+            </Link>
 
             <Box display={{ base: "block", md: "none" }} onClick={handleToggle}>
                 <HamburgerIcon />
@@ -80,7 +82,7 @@ function Navbar(props) {
                     <Text>Courses</Text>
                 </Link>
                 <Link to="/Forms">
-                    <Text>Forms</Text>
+                    <Text>Form</Text>
                 </Link>
             </Stack>
         </Flex>
