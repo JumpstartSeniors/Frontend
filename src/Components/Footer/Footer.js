@@ -50,7 +50,6 @@ export default function Footer() {
       borderTopWidth={2}
       borderStyle={'solid'}
       borderColor={useColorModeValue('gray.200', 'gray.700')}
-      mt={10}
       >
       
       <Container
