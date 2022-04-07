@@ -63,7 +63,7 @@ export default function Footer() {
         <Stack direction={'row'} spacing={6}>
           <Link href={'/Home'}>Home</Link>
           <Link href={'/Courses'}>Courses</Link>
-          <Link href={'/Forms'}>Forms</Link>
+          <Link href={'/Forms'}>Form</Link>
         </Stack>
         <Text style={{textAlign: 'Center'}}>© 2022 Jumpstart Seniors. All rights reserved</Text>
       </Container>
