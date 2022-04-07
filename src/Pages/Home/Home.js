@@ -3,9 +3,9 @@ import Hero from '../../Components/Hero/Hero';
 import Stats from '../../Components/Stats/Stats';
 function Home() {
     return (
-        <ChakraProvider>
+        <ChakraProvider >
             <Hero />
-            <Stats />
+            <Stats  />
         </ChakraProvider>
     );
 }

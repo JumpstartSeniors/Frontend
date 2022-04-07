@@ -61,8 +61,8 @@ export default function Stats() {
 
   return (
     // pass in data
-    
-    <Box maxW="7xl" mx={'auto'} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
+
+    <Box maxW="7xl" mx={'auto'}  px={{ base: 2, sm: 12, md: 17 }}>
       <chakra.h1
         textAlign={'center'}
         fontSize={'4xl'}
@@ -70,7 +70,7 @@ export default function Stats() {
         fontWeight={'bold'}>
         Jumpstart Seniors currently holds data for over:
       </chakra.h1>
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={{ base: 5, lg: 8 }}>
+      <SimpleGrid pb={10} columns={{ base: 1, md: 2 }} spacing={{ base: 5, lg: 8 }}>
         <StatsCard
           title={'Courses'}
           stat={stats.courseLength}
